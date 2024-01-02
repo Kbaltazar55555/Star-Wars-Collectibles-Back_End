@@ -9,9 +9,21 @@ const UserSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
+    },
+    bio: {
+        type: String, 
+        required: true, 
+    }, 
+    Date: {
+        type: Date, 
+        default: Date.now, 
     }
+
     // Add any additional fields here
 });
+
+module.exports = mongoose.model('User', UserSchema);
+//Collection within the DB
 
 // If you need to create a model from the schema:
 // const User = mongoose.model('User', UserSchema);

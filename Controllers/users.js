@@ -1,3 +1,5 @@
+const User = require('../SWModel/users')
+
 exports.index = (req, res) => {
     res.send('Users INDEX');
 };
