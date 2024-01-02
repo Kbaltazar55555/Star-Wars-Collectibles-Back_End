@@ -1,5 +1,8 @@
 const express = require('express')
 const app = express(); 
+require('dotenv').config();
+require('./config/db');
+
 
 //Middleware
 app.use(require('./Routes'));
