@@ -13,6 +13,6 @@ router.get('/:id', users_ctr.singleUser);
 router.put('/:id', users_ctr.updateUser);
 
 //DELETE
-router.delete('/', users_ctr.index);
+router.delete('/', users_ctr.deleteUser);
 
 module.exports = router;

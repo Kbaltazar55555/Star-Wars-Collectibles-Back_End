@@ -71,19 +71,33 @@ exports.updateUser = async (req, res) => {
     };
     
     
+//CRUD-DELETE
+exports.deleteUser = async (req, res) => {
+    try {
+        if(req.body.id){
+            const query = await User.findByIdAndDelete(req.body.id,
+                {
+                    $set: req.body,
+                },
+                {
+                    new: true,
+                }
+                );
+            if(!query) {
+                res.status(400).json({msg: 'invalid user'});
+            } else {
+                res.status(200).json(query);
+            }
+        } else {
+            res.status(400).json({msg: 'invalid request'});
+        }
+    }   catch(err) {
+        res.status(400).json({ msg: err});
+    }
+    };
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     // CRUD-UPDATE option 2 
 
