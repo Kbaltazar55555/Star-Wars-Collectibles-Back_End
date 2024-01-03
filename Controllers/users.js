@@ -34,7 +34,7 @@ exports.listAll = (req, res) => {
     });
 };
 
-exports.createUser = (req, res) => {
+exports.createUser = async (req, res) => {
     const user = new User({
         name: req.body.name,
         title: req.body.title,
@@ -44,8 +44,14 @@ exports.createUser = (req, res) => {
         ContactEmail: req.body.ContactEmail,
         State: req.body.State
     });
+try {
+    const createUser = await user.save();
+    res.status(201).json(user);
+}   catch(err) {
+    res.status(400).json({ msg: err});
+}
 
-    user.save()
+    /*user.save()
         .then((data) => {
             res.status(201).json(data);  // 201 status code for created resource
         })
@@ -55,5 +61,5 @@ exports.createUser = (req, res) => {
                 return res.status(400).json(error); // 400 for bad request
             }
             res.status(500).send(error); // 500 for internal server error
-        });
+        });*/
 };
