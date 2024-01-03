@@ -6,8 +6,8 @@ const users_ctr = require('../../Controllers/users');
 router.post('/', users_ctr.createUser);
 
 //READ
-router.get('/', users_ctr.index);
-router.get('/List', users_ctr.listAll);
+router.get('/', users_ctr.listAll);
+router.get('/:id', users_ctr.singleUser);
 
 //UPDATE
 router.put('/', users_ctr.index);
