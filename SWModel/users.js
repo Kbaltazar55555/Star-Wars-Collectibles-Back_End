@@ -17,9 +17,23 @@ const UserSchema = new mongoose.Schema({
     Date: {
         type: Date, 
         default: Date.now, 
-    }
-
-    // Add any additional fields here
+    },
+    Country: {
+        type: String, 
+        required: true, 
+    }, 
+    State: {
+        type: String, 
+        required: false, 
+    }, 
+    Affiliations: {
+        type: String, 
+        required: true, 
+    }, 
+    ContactEmail: {
+        type: String, 
+        required: true, 
+    }, 
 });
 
 module.exports = mongoose.model('User', UserSchema);
