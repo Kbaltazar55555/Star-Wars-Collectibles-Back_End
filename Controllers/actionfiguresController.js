@@ -3,10 +3,11 @@ const ActionFigure = require('../SWModel/actionfigures');
 // CRUD-CREATE
 exports.createActionFigure = async (req, res) => {
     const actionFigure = new ActionFigure({
-        characterName: req.body.characterName,
-        series: req.body.series,
-        releaseYear: req.body.releaseYear,
-        // other fields...
+        FigureName: req.body.FigureName,
+        CountryOfOrigin: req.body.CountryOfOrigin,
+        SuspectedYearOfRelease: req.body.SuspectedYearOfRelease,
+        FigureLine: req.body.FigureLine,
+        Bio: req.body.Bio
     });
 
     try {

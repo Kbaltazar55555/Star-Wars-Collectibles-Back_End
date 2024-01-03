@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const actionFiguresController = require('../../Controllers/actionfigures'); 
+const actionFiguresController = require('../../controllers/actionfiguresController'); 
 
 // Setting up routes for action figures
 //CREATE
