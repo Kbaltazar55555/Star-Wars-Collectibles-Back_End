@@ -52,3 +52,58 @@ try {
     res.status(400).json({ msg: err});
 }
 };
+
+//CRUD-UPDATE
+exports.updateUser = async (req, res) => {
+    try {
+        const query = await User.findByIdAndUpdate(
+            req.params.id,
+            {
+            $set:req.body,
+            }, {
+             new: true   
+            }
+        );
+        res.status(200).json(query);
+    }   catch(err) {
+        res.status(400).json({ msg: err});
+    }
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // CRUD-UPDATE option 2 
+
+/*exports.updateUser = async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,  // The ID of the user to update
+            { $set: req.body },  // Update the user with the data provided in the request body
+            { new: true, runValidators: true }  // Options: return the modified document rather than the original and run schema validators
+        );
+
+        if (!updatedUser) {
+            // If no user was found with the given ID
+            return res.status(404).json({ msg: 'User not found' });
+        }
+
+        // Send back the updated user
+        res.status(200).json(updatedUser);
+    } catch (err) {
+        // If an error occurs (e.g., validation error, or server error)
+        res.status(500).json({ msg: err.message });
+    }
+};*/

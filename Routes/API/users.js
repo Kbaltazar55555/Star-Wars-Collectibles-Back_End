@@ -10,7 +10,7 @@ router.get('/', users_ctr.listAll);
 router.get('/:id', users_ctr.singleUser);
 
 //UPDATE
-router.put('/', users_ctr.index);
+router.put('/:id', users_ctr.updateUser);
 
 //DELETE
 router.delete('/', users_ctr.index);
