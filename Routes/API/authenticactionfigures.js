@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const authenticActionFiguresController = require('../../controllers/authenticactionfigures'); 
+const authenticActionFiguresController = require('../../controllers/authenticactionfiguresController'); 
 
 // Setting up routes for Authentic Action Figures
 //CREATE
-router.post('/authentic', authenticActionFiguresController.createAuthenticActionFigure);
+router.post('/', authenticActionFiguresController.createAuthenticActionFigure);
 
 //READ
-router.get('/authentic', authenticActionFiguresController.getAllAuthenticActionFigures);
-router.get('/authentic/:id', authenticActionFiguresController.getAuthenticActionFigureById);
+router.get('/', authenticActionFiguresController.getAllAuthenticActionFigures);
+router.get('/:id', authenticActionFiguresController.getAuthenticActionFigureById);
 
 //UPDATE
-router.put('/authentic/:id', authenticActionFiguresController.updateAuthenticActionFigure);
+router.put('/:id', authenticActionFiguresController.updateAuthenticActionFigure);
 
 //DELETE
-router.delete('/authentic/:id', authenticActionFiguresController.deleteAuthenticActionFigure);
+router.delete('/:id', authenticActionFiguresController.deleteAuthenticActionFigure);
 
 module.exports = router;
