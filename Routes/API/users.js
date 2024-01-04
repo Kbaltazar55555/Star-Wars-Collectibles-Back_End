@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const users_ctr = require('../../controllers/users');
+const users_ctr = require('../../controllers/actionfiguresUsers');
 //Route
 //http://localhost:3000/api/users
 //CREATE
