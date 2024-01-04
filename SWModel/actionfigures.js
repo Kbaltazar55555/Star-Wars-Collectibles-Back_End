@@ -7,7 +7,6 @@ const actionFigureSchema = new mongoose.Schema({
     },
     CountryOfOrigin: {
         type: String, 
-        unique: true,
         required: true
     },
     SuspectedYearOfRelease: {
