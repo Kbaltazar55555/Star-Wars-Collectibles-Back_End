@@ -4,8 +4,11 @@ const router = require('express').Router();
 //http://localhost:3000/api/users
 router.use('/users', require('./users'));
 
-//SW Action Figure routes
+//SW Bootleg Action Figure routes
 router.use('/action-figures', require('./actionFigures'));
+
+//SW Authentic Action Figure routes
+router.use('/action-figures-authentic', require('./authenticactionfigures'));
 
 //http://localhost:3000/api
 router.get('/', (req, res) => {

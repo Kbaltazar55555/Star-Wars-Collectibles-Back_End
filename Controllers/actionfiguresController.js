@@ -33,7 +33,7 @@ exports.getActionFigureById = async (req, res) => {
     try {
         const actionFigure = await ActionFigure.findById(req.params.id);
         if (!actionFigure) {
-            return res.status(404).json({ msg: 'Action Figure not found' });
+            return res.status(404).json({ msg: 'Bootleg Action Figure not found' });
         }
         res.status(200).json(actionFigure);
     } catch (err) {
@@ -51,7 +51,7 @@ exports.updateActionFigure = async (req, res) => {
         );
 
         if (!updatedActionFigure) {
-            return res.status(404).json({ msg: 'Action Figure not found' });
+            return res.status(404).json({ msg: 'Bootleg Action Figure not found' });
         }
         res.status(200).json(updatedActionFigure);
     } catch (err) {
@@ -64,9 +64,9 @@ exports.deleteActionFigure = async (req, res) => {
     try {
         const deletedActionFigure = await ActionFigure.findByIdAndDelete(req.params.id);
         if (!deletedActionFigure) {
-            return res.status(404).json({ msg: 'Action Figure not found' });
+            return res.status(404).json({ msg: 'Bootleg Action Figure not found' });
         }
-        res.status(200).json({ msg: 'Action Figure deleted successfully' });
+        res.status(200).json({ msg: 'Bootleg Action Figure deleted successfully' });
     } catch (err) {
         res.status(400).json({ msg: err.message });
     }
