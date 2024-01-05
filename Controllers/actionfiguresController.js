@@ -30,7 +30,7 @@ exports.createActionFigure = async (req, res) => {
             SuspectedYearOfRelease: req.body.SuspectedYearOfRelease,
             FigureLine: req.body.FigureLine,
             Bio: req.body.Bio,
-            image: imagePath // Storing the image path
+            image: imagePath 
         });
 
         const newActionFigure = await actionFigure.save();

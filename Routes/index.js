@@ -1,10 +1,7 @@
-
-//const { Router } = require('express');
-
-//const router = require('express').Router();
-
 const express = require('express');
 const router = express.Router();
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/ '});
 
 //Route
 router.use('/api',require('./API'));
