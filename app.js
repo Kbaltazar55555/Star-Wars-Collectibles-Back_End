@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express(); 
+const cors = require('cors')
 
 
 require('dotenv').config();
@@ -10,6 +11,7 @@ require('./config/db');
 const jwt = require('jsonwebtoken')
 
 app.use(express.json())
+app.use(cors())
 
 const posts = [
     {
@@ -53,7 +55,6 @@ app.use(express.json());
 
 app.use(require('./Routes'));
 app.use('/uploads', express.static('uploads'));
-
 
 app.listen(3000, ()=> {
     console.log('Server is on,boi');
