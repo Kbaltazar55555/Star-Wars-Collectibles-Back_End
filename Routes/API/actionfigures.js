@@ -17,3 +17,4 @@ router.put('/:id', actionFiguresController.updateActionFigure);
 router.delete('/:id', actionFiguresController.deleteActionFigure);
 
 module.exports = router;
+
