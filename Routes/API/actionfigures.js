@@ -4,6 +4,7 @@ const multer = require('multer')
 const upload = multer({ dest: 'uploads/ '});
 const actionFiguresController = require('../../controllers/actionfiguresController'); 
 
+
 // Setting up routes for action figures
 //CREATE
 router.post('/', upload.single('image'), actionFiguresController.createActionFigure);

@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express(); 
 
+
 require('dotenv').config();
 require('./config/db');
 
@@ -24,7 +25,6 @@ const posts = [
         title: 'Hadouken!'
     }
 ]
-
 
 app.get('/posts', authenticateToken, (req, res) => {
  res.json(posts.filter(post => post.username === req.user.name))
@@ -52,6 +52,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use(require('./Routes'));
+app.use('/uploads', express.static('uploads'));
+
 
 app.listen(3000, ()=> {
     console.log('Server is on,boi');
