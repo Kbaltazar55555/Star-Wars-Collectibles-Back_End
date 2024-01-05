@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
 
 const actionFigureSchema = new mongoose.Schema({
     FigureName: {
@@ -21,6 +24,11 @@ const actionFigureSchema = new mongoose.Schema({
         type: String, 
         required: true, 
     },
+    image: {
+        type: String, 
+    },
 });
 
 module.exports = mongoose.model('ActionFigure', actionFigureSchema);
+
+

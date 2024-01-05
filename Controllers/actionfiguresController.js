@@ -7,7 +7,8 @@ exports.createActionFigure = async (req, res) => {
         CountryOfOrigin: req.body.CountryOfOrigin,
         SuspectedYearOfRelease: req.body.SuspectedYearOfRelease,
         FigureLine: req.body.FigureLine,
-        Bio: req.body.Bio
+        Bio: req.body.Bio,
+        Image: req.body.Image
     });
 
     try {

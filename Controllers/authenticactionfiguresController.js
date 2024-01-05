@@ -7,7 +7,8 @@ exports.createAuthenticActionFigure = async (req, res) => {
         Manufacturer: req.body.Manufacturer,
         ReleaseYear: req.body.ReleaseYear,
         Series: req.body.Series,
-        EntryDetails: req.body.EntryDetails
+        EntryDetails: req.body.EntryDetails,
+        Image: req.body.Image
     });
 
     try {
